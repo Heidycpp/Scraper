@@ -25,8 +25,8 @@ db.once('open', function() {
   console.log('Mongoose connection successful.');
 });
 
-
-var Note = require('./models/Note.js');
+//update
+var Note = require('./models/note.js');
 var Article = require('./models/Article.js');
 
 
