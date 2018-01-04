@@ -1,20 +1,21 @@
-
-var mongoose = require('mongoose');
-
+// Require mongoose
+var mongoose = require("mongoose");
+// Create a schema class
 var Schema = mongoose.Schema;
 
-
-var noteSchema = new Schema({
-
-  title: {
-    type:String
-  },
-
-  body: {
-    type:String
-  }
+// Create the Note schema
+var NoteSchema = new Schema({
+    body: {
+        type: String
+    },
+    article: {
+        type: Schema.Types.ObjectId,
+        ref: "Article"
+    }
 });
 
-var note = mongoose.model('note', noteSchema);
+// Create the Note model with the NoteSchema
+var Note = mongoose.model("Note", NoteSchema);
 
-module.exports = note;
+// Export the Note model
+module.exports = Note;
